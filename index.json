@@ -18,7 +18,7 @@
 	"title": "Getting Started",
 	"tags": [],
 	"description": "",
-	"content": "How to use Covergates for beginner. Overview  This chapter will introduce how to use Covergates. It will use official website https://covergates.com as example. If you already have a self-hosted Covergates service, please replace https://covergates.com in the example to your URL. For more information about self-hosted Coverages service, please refer to Self-Hosted Server chapter.\n Quick Start Repository Setting Pull Request  "
+	"content": "How to use Covergates for beginner. Overview  This chapter will introduce how to use Covergates. It will use official website https://covergates.com as example. If you already have a self-hosted Covergates service, please replace https://covergates.com in the example to your URL. For more information about self-hosted Coverages service, please refer to Self-Hosted Server chapter.\n Quick Start Command Line Tool Repository Setting  "
 },
 {
 	"uri": "https://docs.covergates.com/start/quick/",
