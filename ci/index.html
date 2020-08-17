@@ -104,18 +104,10 @@
         
         <a class="nav-link p-0" href="/language/"><h6>Supported Language</h6></a>
     </li>
-    <li data-nav-id="/ci/" class="nav-item my-1 parent active haschildren
+    <li data-nav-id="/ci/" class="nav-item my-1 parent active
         ">
         
         <a class="nav-link p-0" href="/ci/"><h6>Supported CI</h6></a>
-        <ul class="list-unstyled ml-2">
-        <li data-nav-id="/ci/github/" class="nav-item my-1">
-                
-                 <a href="/ci/github/" class="nav-link p-0">
-                    GitHub Action
-                </a>
-        </li>
-        </ul>
     </li>
     <li data-nav-id="/server/" class="nav-item my-1 haschildren
         ">
@@ -143,13 +135,42 @@
 
 </div>
                 <div class="docs-toc large order-lg-2 order-md-0 order-xs-1 col-12 col-lg-2 col-xl-2 position-sticky border-left"><div class="docs-toc">
-	<nav id="TableOfContents"></nav>
+	<nav id="TableOfContents">
+  <ul>
+    <li><a href="#github-action">GitHub Action</a></li>
+  </ul>
+</nav>
 </div>
 </div>
                 <div class="main col-12 order-1 col-md-9 col-lg-10 col-xl-8 py-3">
                 
 
 <h1>Supported CI</h1>
+
+<p class="lead">
+    CI tools support is still under testing. Please help to report <a href="https://github.com/covergates/covergates/issues">issue</a> if you encounter any problem.
+</p>
+
+<h2 id="github-action">GitHub Action</h2>
+<p>Below is a <code>step</code> example:</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml">- <span style="color:#00a8c8">name</span><span style="color:#111">:</span> Report
+  <span style="color:#00a8c8">uses</span><span style="color:#111">:</span> covergates/github-actions@v1
+  <span style="color:#00a8c8">with</span><span style="color:#111">:</span>
+    <span style="color:#00a8c8">report-id</span><span style="color:#111">:</span> <span style="color:#d88200">&#34;Report ID&#34;</span>
+    <span style="color:#00a8c8">report-type</span><span style="color:#111">:</span> <span style="color:#d88200">&#34;go&#34;</span>
+    <span style="color:#00a8c8">report-file</span><span style="color:#111">:</span> <span style="color:#d88200">&#34;./coverage.out&#34;</span>
+    <span style="color:#00a8c8">pull-request</span><span style="color:#111">:</span> <span style="color:#d88200">&#34;true&#34;</span>
+</code></pre></div><p>Arguments:</p>
+<ul>
+<li><code>report-id</code> <strong>Report ID</strong> could be found in repository setting</li>
+<li><code>report-type</code> refer to <a href="/start/cli#upload-command">Upload Command</a> for more detail</li>
+<li><code>report-file</code> coverage report</li>
+<li><code>pull-request</code> set <code>true</code> to leave a comment on your pull request</li>
+</ul>
+
+<div class="alert alert-success" role="alert">
+    Reach the <a href="https://github.com/covergates/github-actions">source code</a> for more detail.
+</div>
 
 
 

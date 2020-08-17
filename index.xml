@@ -61,14 +61,5 @@ mode: set github.com/covergates/covergates/modules/report/report.go:22.100,24.45
 We are working on default filters, you could refer to GitHub for the progress or help us by contributing.</description>
     </item>
     
-    <item>
-      <title>GitHub Action</title>
-      <link>https://docs.covergates.com/ci/github/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.covergates.com/ci/github/</guid>
-      <description></description>
-    </item>
-    
   </channel>
 </rss>

@@ -46,7 +46,7 @@
 	"title": "Supported CI",
 	"tags": [],
 	"description": "",
-	"content": ""
+	"content": "CI tools support is still under testing. Please help to report issue if you encounter any problem. GitHub Action Below is a step example:\n- name: Report uses: covergates/github-actions@v1 with: report-id: \u0026#34;Report ID\u0026#34; report-type: \u0026#34;go\u0026#34; report-file: \u0026#34;./coverage.out\u0026#34; pull-request: \u0026#34;true\u0026#34; Arguments:\n report-id Report ID could be found in repository setting report-type refer to Upload Command for more detail report-file coverage report pull-request set true to leave a comment on your pull request  Reach the source code for more detail.  "
 },
 {
 	"uri": "https://docs.covergates.com/start/setting/",
@@ -75,13 +75,6 @@
 	"tags": [],
 	"description": "",
 	"content": "Welcome to Covergates User Guide! What is Covergates?  Covergates is a self-hosted coverage reports management web service. It\u0026rsquo;s an alternative to services like:\n Code Climate Codecov Coveralls  The goal of this project is to provide an easiest way to deploy a self-hosted service to track code coverage. You don\u0026rsquo;t need to have root permission, network connection or even database server to run covergates. Covergates is built with Go language, therefore it provides an independent binary distribution across all platforms that Go supports. It includes Linux, Windows and macOS.\nFeatures    Git Service Support\n Gitea GitHub    Languages Support\n Go Python Ruby Perl C / C++ Javascript TypeScript    CI Tools\n GitHub Action    Database\n SQLite PostgreSQL    Web Service\n  Source Code Coverage Highlight\n  Repository Setting Dashboard\n  Commits History\n  Promotions\n  Coverage Badge \n  Repository Status Card\n\n      Coming Soon   We are working on:\n  Git Service\n GitLab Support    Language Support\n Java Others, let us know the language you want!    CI Tools\n Drone    Database\n MySQL    "
-},
-{
-	"uri": "https://docs.covergates.com/ci/github/",
-	"title": "GitHub Action",
-	"tags": [],
-	"description": "",
-	"content": ""
 },
 {
 	"uri": "https://docs.covergates.com/tags/",
