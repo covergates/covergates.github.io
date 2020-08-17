@@ -117,13 +117,13 @@
         <li data-nav-id="/server/github/" class="nav-item my-1">
                 
                  <a href="/server/github/" class="nav-link p-0">
-                    GitHub
+                    Config GitHub
                 </a>
         </li>
         <li data-nav-id="/server/gitea/" class="nav-item my-1">
                 
                  <a href="/server/gitea/" class="nav-link p-0">
-                    Gitea
+                    Config Gitea
                 </a>
         </li>
         </ul>
@@ -135,7 +135,18 @@
 
 </div>
                 <div class="docs-toc large order-lg-2 order-md-0 order-xs-1 col-12 col-lg-2 col-xl-2 position-sticky border-left"><div class="docs-toc">
-	<nav id="TableOfContents"></nav>
+	<nav id="TableOfContents">
+  <ul>
+    <li><a href="#getting-start">Getting Start</a></li>
+    <li><a href="#configuration">Configuration</a>
+      <ul>
+        <li><a href="#config-server">Config Server</a></li>
+        <li><a href="#config-database">Config Database</a></li>
+        <li><a href="#config-git-service">Config Git Service</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
 </div>
 </div>
                 <div class="main col-12 order-1 col-md-9 col-lg-10 col-xl-8 py-3">
@@ -143,7 +154,194 @@
 
 <h1>Self-Hosted Server</h1>
 
+<p class="lead">
+    Covergates provides the easiest way to run self-hosted service!
+</p>
+
+<h2 id="getting-start">Getting Start</h2>
 <hr>
+<p>Get <a href="https://github.com/covergates/covergates/releases">latest released</a> <code>covergates-server</code> binary.
+Download <code>.tar.gz</code> for your platform and extract it to the path you like. Then run:</p>
+
+
+
+
+
+
+    
+    
+
+
+
+
+<div class="position-relative">
+    <div class="position-absolute" style="right:0;">
+        <button class="btn btn-light" data-clipboard-target="#clipboard_1e8fa469a9">
+        Copy
+        </button>
+    </div>
+    <div id="clipboard_1e8fa469a9">
+    <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">
+./covergates-server
+
+</code></pre></div>
+    </div>
+</div>
+
+
+
+
+<p>The server should start and bind to <a href="http://localhost:8080">http://localhost:8080</a>.</p>
+<h2 id="configuration">Configuration</h2>
+<hr>
+<p><code>covergates-server</code> uses environment variables to config.</p>
+<h3 id="config-server">Config Server</h3>
+<p>You can config server address and it&rsquo;s base url.</p>
+<ul>
+<li><code>GATES_SERVER_ADDR</code> Default http://localhost:8080</li>
+<li><code>GATES_SERVER_BASE</code> Default /</li>
+</ul>
+<p>For example:</p>
+
+
+
+
+
+
+    
+    
+
+
+
+
+<div class="position-relative">
+    <div class="position-absolute" style="right:0;">
+        <button class="btn btn-light" data-clipboard-target="#clipboard_1d5e4ad7d8">
+        Copy
+        </button>
+    </div>
+    <div id="clipboard_1d5e4ad7d8">
+    <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">
+<span style="color:#111">export</span> <span style="color:#111">GATES_SERVER_ADDR</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;https://covergates.com&#34;</span>
+
+</code></pre></div>
+    </div>
+</div>
+
+
+
+
+<p>or</p>
+
+
+
+
+
+
+    
+    
+
+
+
+
+<div class="position-relative">
+    <div class="position-absolute" style="right:0;">
+        <button class="btn btn-light" data-clipboard-target="#clipboard_1f6b36fd0b">
+        Copy
+        </button>
+    </div>
+    <div id="clipboard_1f6b36fd0b">
+    <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">
+<span style="color:#111">export</span> <span style="color:#111">GATES_SERVER_ADDR</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;http://your.domain.name&#34;</span>
+<span style="color:#111">export</span> <span style="color:#111">GATES_SERVER_BASE</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;/covergates&#34;</span>
+<span style="color:#75715e"># Server will bind to http://your.domain.name/covergates</span>
+
+</code></pre></div>
+    </div>
+</div>
+
+
+
+
+<h3 id="config-database">Config Database</h3>
+<p><code>covergates-server</code> uses <a href="https://www.sqlite.org/">SQLite</a> by default, therefore database server is not necessary.
+It will create a <code>core.db</code> under working path, all reports will save into <code>core.db</code>. You can change the database name with:</p>
+
+
+
+
+
+
+    
+    
+
+
+
+
+<div class="position-relative">
+    <div class="position-absolute" style="right:0;">
+        <button class="btn btn-light" data-clipboard-target="#clipboard_b76e87d78f">
+        Copy
+        </button>
+    </div>
+    <div id="clipboard_b76e87d78f">
+    <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">
+<span style="color:#111">export</span> <span style="color:#111">GATES_DB_NAME</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;covergates.db&#34;</span>
+
+</code></pre></div>
+    </div>
+</div>
+
+
+
+
+<p>We also provide <a href="https://www.postgresql.org/">PostgreSQL</a> as database server. Here is an example:</p>
+
+
+
+
+
+
+    
+    
+
+
+
+
+<div class="position-relative">
+    <div class="position-absolute" style="right:0;">
+        <button class="btn btn-light" data-clipboard-target="#clipboard_bd826fc5c1">
+        Copy
+        </button>
+    </div>
+    <div id="clipboard_bd826fc5c1">
+    <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">
+<span style="color:#111">export</span> <span style="color:#111">GATES_DB_DRIVER</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;postgres&#34;</span>,
+<span style="color:#111">export</span> <span style="color:#111">GATES_DB_HOST</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;127.0.0.1&#34;</span>,
+<span style="color:#111">export</span> <span style="color:#111">GATES_DB_PORT</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;5432&#34;</span>,
+<span style="color:#111">export</span> <span style="color:#111">GATES_DB_USER</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;postgres&#34;</span>,
+<span style="color:#111">export</span> <span style="color:#111">GATES_DB_NAME</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;covergates&#34;</span>,
+<span style="color:#111">export</span> <span style="color:#111">GATES_DB_PASSWORD</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;PASSWORD&#34;</span>,
+
+</code></pre></div>
+    </div>
+</div>
+
+
+
+
+
+<div class="alert alert-success" role="alert">
+    You need to create a database on your PostgreSQL server in advance.
+</div>
+
+<h3 id="config-git-service">Config Git Service</h3>
+<p><code>covergates-server</code> requires to connect with a Git service to access your source code. Supported Git service are:</p>
+<ul>
+<li><a href="/server/gitea">Gitea</a></li>
+<li><a href="/server/github">GitHub</a></li>
+</ul>
+<p>Please refer to the Git service you using to learn how to config <code>covergates-server</code>.</p>
 
 
     

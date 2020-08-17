@@ -1,17 +1,17 @@
 [
 {
 	"uri": "https://docs.covergates.com/server/github/",
-	"title": "GitHub",
+	"title": "Config GitHub",
 	"tags": [],
 	"description": "",
-	"content": ""
+	"content": "Create OAuth Application  covergates-server uses OAuth2 to control user access. To create an OAuth2 application on GitHub, please refer to Creating an OAuth App for detail.\nNotice that the Authorization callback URL should be https://your.domain.name/login/github. Here is an example:\nYou should get the Client ID and Client Secret on your application setting page.\nUpdate Environment  Once you create an OAuth application on GitHub, you could use below environment variables to tell covergates-server to use it.\nCopy   export GATES_GITHUB_CLIENT_ID=\u0026#34;Client ID\u0026#34;, export GATES_GITHUB_CLIENT_SECRET=\u0026#34;Client Secret\u0026#34;, export GATES_GITHUB_SERVER=\u0026#34;https://github.com\u0026#34;, export GATES_GITHUB_API_SERVER=\u0026#34;https://api.github.com\u0026#34;,    Restart your covergates-server to apply to new setting.\n"
 },
 {
 	"uri": "https://docs.covergates.com/server/gitea/",
-	"title": "Gitea",
+	"title": "Config Gitea",
 	"tags": [],
 	"description": "",
-	"content": ""
+	"content": "Create OAuth Application  covergates-server uses OAuth2 to control user access. To create an OAuth2 application on Gitea, navigate Settings \u0026gt; Applications on your Gitea website. The URL would be:\n# Replace http://localhost:3000 to your Gitea URL http://localhost:3000/user/settings/applications Create a new application as shown below:\nReplace http://localhost:8080/login/gitea to your Covergates URL, such as http://your.domain.name/login/gitea  You should get your Client ID and Client Secret like:\nUpdate Environment  Once you create an OAuth application on Gitea, you could use below environment variables to tell covergates-server to use it.\nCopy   export GATES_GITEA_CLIENT_ID=\u0026#34;2c591d86-b26a-416a-9b1c-4bc2ea770033\u0026#34;, export GATES_GITEA_CLIENT_SECRET=\u0026#34;USBsFNPJmlJg1VPx-t5Pwwo2hZ9lDDXUEEP-Jebzm-w=\u0026#34;, export GATES_GITEA_SERVER=\u0026#34;http://localhost:3000\u0026#34;, export GATES_GITEA_SKIP_VERITY=\u0026#34;true\u0026#34;    Replace GATES_GITEA_CLIENT_ID, GATES_GITEA_CLIENT_SECRET and GATES_GITEA_SERVER to the value you acquire on previous step.  Restart your covergates-server to apply to new setting.\n"
 },
 {
 	"uri": "https://docs.covergates.com/start/",
@@ -60,7 +60,7 @@
 	"title": "Self-Hosted Server",
 	"tags": [],
 	"description": "",
-	"content": " "
+	"content": "Covergates provides the easiest way to run self-hosted service! Getting Start  Get latest released covergates-server binary. Download .tar.gz for your platform and extract it to the path you like. Then run:\nCopy   ./covergates-server    The server should start and bind to http://localhost:8080.\nConfiguration  covergates-server uses environment variables to config.\nConfig Server You can config server address and it\u0026rsquo;s base url.\n GATES_SERVER_ADDR Default http://localhost:8080 GATES_SERVER_BASE Default /  For example:\nCopy   export GATES_SERVER_ADDR=\u0026#34;https://covergates.com\u0026#34;    or\nCopy   export GATES_SERVER_ADDR=\u0026#34;http://your.domain.name\u0026#34; export GATES_SERVER_BASE=\u0026#34;/covergates\u0026#34; # Server will bind to http://your.domain.name/covergates    Config Database covergates-server uses SQLite by default, therefore database server is not necessary. It will create a core.db under working path, all reports will save into core.db. You can change the database name with:\nCopy   export GATES_DB_NAME=\u0026#34;covergates.db\u0026#34;    We also provide PostgreSQL as database server. Here is an example:\nCopy   export GATES_DB_DRIVER=\u0026#34;postgres\u0026#34;, export GATES_DB_HOST=\u0026#34;127.0.0.1\u0026#34;, export GATES_DB_PORT=\u0026#34;5432\u0026#34;, export GATES_DB_USER=\u0026#34;postgres\u0026#34;, export GATES_DB_NAME=\u0026#34;covergates\u0026#34;, export GATES_DB_PASSWORD=\u0026#34;PASSWORD\u0026#34;,    You need to create a database on your PostgreSQL server in advance.  Config Git Service covergates-server requires to connect with a Git service to access your source code. Supported Git service are:\n Gitea GitHub  Please refer to the Git service you using to learn how to config covergates-server.\n"
 },
 {
 	"uri": "https://docs.covergates.com/categories/",

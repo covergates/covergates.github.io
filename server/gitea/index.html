@@ -8,7 +8,7 @@
 
     <title>
         
-        Gitea | Covergates Documentation
+        Config Gitea | Covergates Documentation
         
     </title>
 
@@ -117,13 +117,13 @@
         <li data-nav-id="/server/github/" class="nav-item my-1">
                 
                  <a href="/server/github/" class="nav-link p-0">
-                    GitHub
+                    Config GitHub
                 </a>
         </li>
         <li data-nav-id="/server/gitea/" class="nav-item my-1 active">
                 
                  <a href="/server/gitea/" class="nav-link p-0">
-                    Gitea
+                    Config Gitea
                 </a>
         </li>
         </ul>
@@ -135,14 +135,76 @@
 
 </div>
                 <div class="docs-toc large order-lg-2 order-md-0 order-xs-1 col-12 col-lg-2 col-xl-2 position-sticky border-left"><div class="docs-toc">
-	<nav id="TableOfContents"></nav>
+	<nav id="TableOfContents">
+  <ul>
+    <li><a href="#create-oauth-application">Create OAuth Application</a></li>
+    <li><a href="#update-environment">Update Environment</a></li>
+  </ul>
+</nav>
 </div>
 </div>
                 <div class="main col-12 order-1 col-md-9 col-lg-10 col-xl-8 py-3">
                 
 
-<h1>Gitea</h1>
+<h1>Config Gitea</h1>
 
+<h2 id="create-oauth-application">Create OAuth Application</h2>
+<hr>
+<p><code>covergates-server</code> uses OAuth2 to control user access.
+To create an OAuth2 application on Gitea, navigate <code>Settings &gt; Applications</code> on your Gitea website.
+The URL would be:</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># Replace http://localhost:3000 to your Gitea URL</span>
+http://localhost:3000/user/settings/applications
+</code></pre></div><p>Create a new application as shown below:</p>
+<p><img src="/images/gitea_oauth.png" alt="oauth"></p>
+
+<div class="alert alert-success" role="alert">
+    Replace <code>http://localhost:8080/login/gitea</code> to your Covergates URL, such as <code>http://your.domain.name/login/gitea</code>
+</div>
+
+<p>You should get your <strong>Client ID</strong> and <strong>Client Secret</strong> like:</p>
+<p><img src="/images/gitea_client.png" alt="client"></p>
+<h2 id="update-environment">Update Environment</h2>
+<hr>
+<p>Once you create an OAuth application on Gitea, you could use below environment variables to tell <code>covergates-server</code> to use it.</p>
+
+
+
+
+
+
+    
+    
+
+
+
+
+<div class="position-relative">
+    <div class="position-absolute" style="right:0;">
+        <button class="btn btn-light" data-clipboard-target="#clipboard_0a14ab2ff9">
+        Copy
+        </button>
+    </div>
+    <div id="clipboard_0a14ab2ff9">
+    <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">
+<span style="color:#111">export</span> <span style="color:#111">GATES_GITEA_CLIENT_ID</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;2c591d86-b26a-416a-9b1c-4bc2ea770033&#34;</span>,
+<span style="color:#111">export</span> <span style="color:#111">GATES_GITEA_CLIENT_SECRET</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;USBsFNPJmlJg1VPx-t5Pwwo2hZ9lDDXUEEP-Jebzm-w=&#34;</span>,
+<span style="color:#111">export</span> <span style="color:#111">GATES_GITEA_SERVER</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;http://localhost:3000&#34;</span>,
+<span style="color:#111">export</span> <span style="color:#111">GATES_GITEA_SKIP_VERITY</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;true&#34;</span>
+
+</code></pre></div>
+    </div>
+</div>
+
+
+
+
+
+<div class="alert alert-success" role="alert">
+    Replace <code>GATES_GITEA_CLIENT_ID</code>, <code>GATES_GITEA_CLIENT_SECRET</code> and <code>GATES_GITEA_SERVER</code> to the value you acquire on previous step.
+</div>
+
+<p>Restart your <code>covergates-server</code> to apply to new setting.</p>
 
 
     
