@@ -85,16 +85,16 @@
                     Quick Start
                 </a>
         </li>
+        <li data-nav-id="/start/cli/" class="nav-item my-1">
+                
+                 <a href="/start/cli/" class="nav-link p-0">
+                    Command Line Tool
+                </a>
+        </li>
         <li data-nav-id="/start/setting/" class="nav-item my-1">
                 
                  <a href="/start/setting/" class="nav-link p-0">
                     Repository Setting
-                </a>
-        </li>
-        <li data-nav-id="/start/comment/" class="nav-item my-1">
-                
-                 <a href="/start/comment/" class="nav-link p-0">
-                    Pull Request
                 </a>
         </li>
         </ul>
@@ -103,6 +103,19 @@
         ">
         
         <a class="nav-link p-0" href="/language/"><h6>Supported Language</h6></a>
+    </li>
+    <li data-nav-id="/ci/" class="nav-item my-1 haschildren
+        ">
+        
+        <a class="nav-link p-0" href="/ci/"><h6>Supported CI</h6></a>
+        <ul class="list-unstyled ml-2">
+        <li data-nav-id="/ci/github/" class="nav-item my-1">
+                
+                 <a href="/ci/github/" class="nav-link p-0">
+                    GitHub Action
+                </a>
+        </li>
+        </ul>
     </li>
     <li data-nav-id="/server/" class="nav-item my-1 haschildren
         ">
@@ -161,11 +174,9 @@
 <script type="text/javascript" src="/plugins/auto-complete.js"></script>
 <link href="/plugins/auto-complete.css" rel="stylesheet">
 <script type="text/javascript">
-  { { if .Site.IsMultiLingual } }
+  
   var baseurl = "https:\/\/docs.covergates.com";
-  { { else } }
-  var baseurl = "https:\/\/docs.covergates.com";
-  { { end } }
+  
 </script>
 <script type="text/javascript" src="/plugins/search.js"></script>
 

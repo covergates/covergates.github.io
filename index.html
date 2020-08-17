@@ -9,7 +9,7 @@
 
     <title>
         
-        Covergates Guide | Covergates Documentation
+        Covergates | Covergates Documentation
         
     </title>
 
@@ -86,16 +86,16 @@
                     Quick Start
                 </a>
         </li>
+        <li data-nav-id="/start/cli/" class="nav-item my-1">
+                
+                 <a href="/start/cli/" class="nav-link p-0">
+                    Command Line Tool
+                </a>
+        </li>
         <li data-nav-id="/start/setting/" class="nav-item my-1">
                 
                  <a href="/start/setting/" class="nav-link p-0">
                     Repository Setting
-                </a>
-        </li>
-        <li data-nav-id="/start/comment/" class="nav-item my-1">
-                
-                 <a href="/start/comment/" class="nav-link p-0">
-                    Pull Request
                 </a>
         </li>
         </ul>
@@ -104,6 +104,19 @@
         ">
         
         <a class="nav-link p-0" href="/language/"><h6>Supported Language</h6></a>
+    </li>
+    <li data-nav-id="/ci/" class="nav-item my-1 haschildren
+        ">
+        
+        <a class="nav-link p-0" href="/ci/"><h6>Supported CI</h6></a>
+        <ul class="list-unstyled ml-2">
+        <li data-nav-id="/ci/github/" class="nav-item my-1">
+                
+                 <a href="/ci/github/" class="nav-link p-0">
+                    GitHub Action
+                </a>
+        </li>
+        </ul>
     </li>
     <li data-nav-id="/server/" class="nav-item my-1 haschildren
         ">
@@ -131,19 +144,133 @@
 
 </div>
                 <div class="docs-toc large order-lg-2 order-md-0 order-xs-1 col-12 col-lg-2 col-xl-2 position-sticky border-left"><div class="docs-toc">
-	<nav id="TableOfContents"></nav>
+	<nav id="TableOfContents">
+  <ul>
+    <li><a href="#what-is-covergates">What is Covergates?</a></li>
+    <li><a href="#features">Features</a></li>
+    <li><a href="#coming-soon">Coming Soon</a></li>
+  </ul>
+</nav>
 </div>
 </div>
                 <div class="main col-12 order-1 col-md-9 col-lg-10 col-xl-8 py-3">
                 
 	
 
-	<h1>Covergates Guide</h1>
+	<h1>Covergates</h1>
 
 	<p class="lead">
-    Thank you for visiting covergates user guide!
+    Welcome to Covergates User Guide!
 </p>
 
+<h2 id="what-is-covergates">What is Covergates?</h2>
+<hr>
+<p>Covergates is a self-hosted coverage reports management web service.
+It&rsquo;s an alternative to services like:</p>
+<ul>
+<li><a href="https://codeclimate.com/">Code Climate</a></li>
+<li><a href="https://codecov.io/">Codecov</a></li>
+<li><a href="https://coveralls.io/">Coveralls</a></li>
+</ul>
+<p>The goal of this project is to provide an easiest way
+to deploy a self-hosted service to track code coverage.
+You don&rsquo;t need to have <strong>root permission</strong>, <strong>network connection</strong> or even <strong>database server</strong>
+to run covergates.
+Covergates is built with <strong><a href="https://golang.org/">Go</a></strong> language,
+therefore it provides an independent binary distribution across all platforms that Go supports.
+It includes Linux, Windows and macOS.</p>
+<h2 id="features">Features</h2>
+<hr>
+<ul>
+<li>
+<p>Git Service Support</p>
+<ul>
+<li>Gitea</li>
+<li>GitHub</li>
+</ul>
+</li>
+<li>
+<p>Languages Support</p>
+<ul>
+<li>Go</li>
+<li>Python</li>
+<li>Ruby</li>
+<li>Perl</li>
+<li>C / C++</li>
+<li>Javascript</li>
+<li>TypeScript</li>
+</ul>
+</li>
+<li>
+<p>CI Tools</p>
+<ul>
+<li>GitHub Action</li>
+</ul>
+</li>
+<li>
+<p>Database</p>
+<ul>
+<li>SQLite</li>
+<li>PostgreSQL</li>
+</ul>
+</li>
+<li>
+<p>Web Service</p>
+<ul>
+<li>
+<p>Source Code Coverage Highlight</p>
+</li>
+<li>
+<p>Repository Setting Dashboard</p>
+</li>
+<li>
+<p>Commits History</p>
+</li>
+<li>
+<p>Promotions</p>
+<ul>
+<li>
+<p>Coverage Badge <a href="https://covergates.com/report/github/covergates/covergates"><img src="https://covergates.com/api/v1/reports/bsi5dvi23akg00a0tgl0/badge?" alt="badge"></a></p>
+</li>
+<li>
+<p>Repository Status Card</p>
+<p><a href="https://covergates.com/report/github/covergates/covergates"><img src="https://covergates.com/api/v1/reports/bsi5dvi23akg00a0tgl0/card" alt="card"></a></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="coming-soon">Coming Soon</h2>
+<hr>
+<p><i class='fas fa-wrench'></i> We are working on:</p>
+<ul>
+<li>
+<p>Git Service</p>
+<ul>
+<li>GitLab Support</li>
+</ul>
+</li>
+<li>
+<p>Language Support</p>
+<ul>
+<li>Java</li>
+<li>Others, <a href="https://github.com/covergates/covergates/issues">let us know the language you want!</a></li>
+</ul>
+</li>
+<li>
+<p>CI Tools</p>
+<ul>
+<li>Drone</li>
+</ul>
+</li>
+<li>
+<p>Database</p>
+<ul>
+<li>MySQL</li>
+</ul>
+</li>
+</ul>
 
 	
 
@@ -166,11 +293,9 @@
 <script type="text/javascript" src="/plugins/auto-complete.js"></script>
 <link href="/plugins/auto-complete.css" rel="stylesheet">
 <script type="text/javascript">
-  { { if .Site.IsMultiLingual } }
+  
   var baseurl = "https:\/\/docs.covergates.com";
-  { { else } }
-  var baseurl = "https:\/\/docs.covergates.com";
-  { { end } }
+  
 </script>
 <script type="text/javascript" src="/plugins/search.js"></script>
 

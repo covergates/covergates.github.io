@@ -85,16 +85,16 @@
                     Quick Start
                 </a>
         </li>
+        <li data-nav-id="/start/cli/" class="nav-item my-1">
+                
+                 <a href="/start/cli/" class="nav-link p-0">
+                    Command Line Tool
+                </a>
+        </li>
         <li data-nav-id="/start/setting/" class="nav-item my-1">
                 
                  <a href="/start/setting/" class="nav-link p-0">
                     Repository Setting
-                </a>
-        </li>
-        <li data-nav-id="/start/comment/" class="nav-item my-1">
-                
-                 <a href="/start/comment/" class="nav-link p-0">
-                    Pull Request
                 </a>
         </li>
         </ul>
@@ -103,6 +103,19 @@
         ">
         
         <a class="nav-link p-0" href="/language/"><h6>Supported Language</h6></a>
+    </li>
+    <li data-nav-id="/ci/" class="nav-item my-1 haschildren
+        ">
+        
+        <a class="nav-link p-0" href="/ci/"><h6>Supported CI</h6></a>
+        <ul class="list-unstyled ml-2">
+        <li data-nav-id="/ci/github/" class="nav-item my-1">
+                
+                 <a href="/ci/github/" class="nav-link p-0">
+                    GitHub Action
+                </a>
+        </li>
+        </ul>
     </li>
     <li data-nav-id="/server/" class="nav-item my-1 haschildren
         ">
@@ -130,7 +143,11 @@
 
 </div>
                 <div class="docs-toc large order-lg-2 order-md-0 order-xs-1 col-12 col-lg-2 col-xl-2 position-sticky border-left"><div class="docs-toc">
-	<nav id="TableOfContents"></nav>
+	<nav id="TableOfContents">
+  <ul>
+    <li><a href="#tutorial">Tutorial</a></li>
+  </ul>
+</nav>
 </div>
 </div>
                 <div class="main col-12 order-1 col-md-9 col-lg-10 col-xl-8 py-3">
@@ -138,6 +155,38 @@
 
 <h1>Supported Language</h1>
 
+<h2 id="tutorial">Tutorial</h2>
+<hr>
+<table>
+<thead>
+<tr>
+<th>Language</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Go</td>
+<td><a href="https://github.com/covergates/go-example">go-example</a></td>
+</tr>
+<tr>
+<td>Perl</td>
+<td>ongoing</td>
+</tr>
+<tr>
+<td>Python</td>
+<td>ongoing</td>
+</tr>
+<tr>
+<td>Ruby (SimpleCov: RSpec)</td>
+<td>-</td>
+</tr>
+<tr>
+<td>lcov (C, C++, Javascript, TypeScript)</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
 
 
     
@@ -161,11 +210,9 @@
 <script type="text/javascript" src="/plugins/auto-complete.js"></script>
 <link href="/plugins/auto-complete.css" rel="stylesheet">
 <script type="text/javascript">
-  { { if .Site.IsMultiLingual } }
+  
   var baseurl = "https:\/\/docs.covergates.com";
-  { { else } }
-  var baseurl = "https:\/\/docs.covergates.com";
-  { { end } }
+  
 </script>
 <script type="text/javascript" src="/plugins/search.js"></script>
 

@@ -85,16 +85,16 @@
                     Quick Start
                 </a>
         </li>
+        <li data-nav-id="/start/cli/" class="nav-item my-1">
+                
+                 <a href="/start/cli/" class="nav-link p-0">
+                    Command Line Tool
+                </a>
+        </li>
         <li data-nav-id="/start/setting/" class="nav-item my-1">
                 
                  <a href="/start/setting/" class="nav-link p-0">
                     Repository Setting
-                </a>
-        </li>
-        <li data-nav-id="/start/comment/" class="nav-item my-1">
-                
-                 <a href="/start/comment/" class="nav-link p-0">
-                    Pull Request
                 </a>
         </li>
         </ul>
@@ -103,6 +103,19 @@
         ">
         
         <a class="nav-link p-0" href="/language/"><h6>Supported Language</h6></a>
+    </li>
+    <li data-nav-id="/ci/" class="nav-item my-1 haschildren
+        ">
+        
+        <a class="nav-link p-0" href="/ci/"><h6>Supported CI</h6></a>
+        <ul class="list-unstyled ml-2">
+        <li data-nav-id="/ci/github/" class="nav-item my-1">
+                
+                 <a href="/ci/github/" class="nav-link p-0">
+                    GitHub Action
+                </a>
+        </li>
+        </ul>
     </li>
     <li data-nav-id="/server/" class="nav-item my-1 haschildren
         ">
@@ -130,7 +143,11 @@
 
 </div>
                 <div class="docs-toc large order-lg-2 order-md-0 order-xs-1 col-12 col-lg-2 col-xl-2 position-sticky border-left"><div class="docs-toc">
-	<nav id="TableOfContents"></nav>
+	<nav id="TableOfContents">
+  <ul>
+    <li><a href="#fundamental-workflow">Fundamental Workflow</a></li>
+  </ul>
+</nav>
 </div>
 </div>
                 <div class="main col-12 order-1 col-md-9 col-lg-10 col-xl-8 py-3">
@@ -138,6 +155,112 @@
 
 <h1>Quick Start</h1>
 
+<p class="lead">
+    This tutorial will access to <a href="https://covergates.com/">https://covergates.com</a>.
+If you are using self-hosted version, please replace <a href="https://covergates.com/">https://covergates.com/</a>
+to your self-hosted server URL.
+</p>
+
+<h2 id="fundamental-workflow">Fundamental Workflow</h2>
+<hr>
+<ol>
+<li>
+<p>Sign up <a href="https://covergates.com/">Covergates</a> with your <a href="https://github.com/">GitHub</a> or <a href="https://gitea.com/">Gitea</a> account.</p>
+</li>
+<li>
+<p>Navigate <a href="https://covergates.com/repo">https://covergates.com/repo</a> to the list of your repositories.</p>
+</li>
+<li>
+<p>Click <strong>ACTIVATE</strong> button to activate the repository for uploading coverage reports.</p>
+</li>
+<li>
+<p>Go to <strong>SETTING</strong> tag, you can update report path filter and get your <strong>Report ID</strong></p>
+
+<div class="alert alert-success" role="alert">
+    To get more information about repository setting, please refer to <a href="/start/setting">Repository Setting</a>
+</div>
+
+</li>
+<li>
+<p>Run testing for your language and generate coverage report. You can refer to <a href="/language">Supported Language</a> for more detail.</p>
+</li>
+<li>
+<p>Download the <a href="https://github.com/covergates/covergates/releases">latest released</a> <code>covergates</code> command line tool for your platform.
+Once downloaded, the binary can run directly. You could put it to somewhere in your <code>PATH</code>.</p>
+</li>
+<li>
+<p>Upload your report by running <code>covergates upload</code>, for example:</p>
+
+
+
+
+
+
+    
+    
+
+
+
+
+<div class="position-relative">
+    <div class="position-absolute" style="right:0;">
+        <button class="btn btn-light" data-clipboard-target="#clipboard_9566888968">
+        Copy
+        </button>
+    </div>
+    <div id="clipboard_9566888968">
+    <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">
+    covergates upload --report &lt;Report ID&gt; --type go ./coverage.out
+    
+</code></pre></div>
+    </div>
+</div>
+
+
+
+
+<p>or for self-hosted server</p>
+
+
+
+
+
+
+    
+    
+
+
+
+
+<div class="position-relative">
+    <div class="position-absolute" style="right:0;">
+        <button class="btn btn-light" data-clipboard-target="#clipboard_efb27313b7">
+        Copy
+        </button>
+    </div>
+    <div id="clipboard_efb27313b7">
+    <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">
+    <span style="color:#111">export</span> <span style="color:#111">REPORT_ID</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;Report ID&#34;</span>
+    <span style="color:#111">export</span> <span style="color:#111">API_URL</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;http://your.domain.name/api/v1&#34;</span>
+    covergates upload --type go ./coverage.out
+    
+</code></pre></div>
+    </div>
+</div>
+
+
+
+
+
+<div class="alert alert-success" role="alert">
+    You can refer to <a href="/start/cli">Command Line Tool</a> for more options.
+</div>
+
+</li>
+<li>
+<p>Congratulation! <i class="far fa-laugh-squint"></i> Now you can navigate your repository page to see your report!</p>
+</li>
+</ol>
 
 
     
@@ -161,11 +284,9 @@
 <script type="text/javascript" src="/plugins/auto-complete.js"></script>
 <link href="/plugins/auto-complete.css" rel="stylesheet">
 <script type="text/javascript">
-  { { if .Site.IsMultiLingual } }
+  
   var baseurl = "https:\/\/docs.covergates.com";
-  { { else } }
-  var baseurl = "https:\/\/docs.covergates.com";
-  { { end } }
+  
 </script>
 <script type="text/javascript" src="/plugins/search.js"></script>
 

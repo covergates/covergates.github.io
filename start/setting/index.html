@@ -85,16 +85,16 @@
                     Quick Start
                 </a>
         </li>
+        <li data-nav-id="/start/cli/" class="nav-item my-1">
+                
+                 <a href="/start/cli/" class="nav-link p-0">
+                    Command Line Tool
+                </a>
+        </li>
         <li data-nav-id="/start/setting/" class="nav-item my-1 active">
                 
                  <a href="/start/setting/" class="nav-link p-0">
                     Repository Setting
-                </a>
-        </li>
-        <li data-nav-id="/start/comment/" class="nav-item my-1">
-                
-                 <a href="/start/comment/" class="nav-link p-0">
-                    Pull Request
                 </a>
         </li>
         </ul>
@@ -103,6 +103,19 @@
         ">
         
         <a class="nav-link p-0" href="/language/"><h6>Supported Language</h6></a>
+    </li>
+    <li data-nav-id="/ci/" class="nav-item my-1 haschildren
+        ">
+        
+        <a class="nav-link p-0" href="/ci/"><h6>Supported CI</h6></a>
+        <ul class="list-unstyled ml-2">
+        <li data-nav-id="/ci/github/" class="nav-item my-1">
+                
+                 <a href="/ci/github/" class="nav-link p-0">
+                    GitHub Action
+                </a>
+        </li>
+        </ul>
     </li>
     <li data-nav-id="/server/" class="nav-item my-1 haschildren
         ">
@@ -130,13 +143,41 @@
 
 </div>
                 <div class="docs-toc large order-lg-2 order-md-0 order-xs-1 col-12 col-lg-2 col-xl-2 position-sticky border-left"><div class="docs-toc">
-	<nav id="TableOfContents"></nav>
+	<nav id="TableOfContents">
+  <ul>
+    <li><a href="#filter-path">Filter Path</a></li>
+  </ul>
+</nav>
 </div>
 </div>
                 <div class="main col-12 order-1 col-md-9 col-lg-10 col-xl-8 py-3">
                 
 
 <h1>Repository Setting</h1>
+
+<p class="lead">
+    You could config repository on setting page.
+</p>
+
+<h2 id="filter-path">Filter Path</h2>
+<hr>
+<p><strong>Filter</strong> takes regular expressions and trims the path. Take <code>Go</code> coverage report for example:</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">mode: <span style="color:#111">set</span>
+github.com/covergates/covergates/modules/report/report.go:22.100,24.45 <span style="color:#ae81ff">2</span> <span style="color:#ae81ff">1</span>
+github.com/covergates/covergates/modules/report/report.go:27.2,28.45 <span style="color:#ae81ff">2</span> <span style="color:#ae81ff">1</span>
+github.com/covergates/covergates/modules/report/report.go:39.2,39.22 <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span>
+github.com/covergates/covergates/modules/report/report.go:47.2,48.45 <span style="color:#ae81ff">2</span> <span style="color:#ae81ff">1</span>
+github.com/covergates/covergates/modules/report/report.go:52.2,55.8 <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span>
+github.com/covergates/covergates/modules/report/report.go:24.45,26.3 <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span>
+github.com/covergates/covergates/modules/report/report.go:28.45,33.32 <span style="color:#ae81ff">2</span> <span style="color:#ae81ff">1</span>
+github.com/covergates/covergates/modules/report/report.go:37.3,37.38 <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span>
+github.com/covergates/covergates/modules/report/report.go:33.32,36.4 <span style="color:#ae81ff">2</span> <span style="color:#ae81ff">1</span>
+</code></pre></div><p>You could remove <code>github.com/covergates/covergates</code> with setting:</p>
+<p><img src="/images/setting_filter.png" alt="filter"></p>
+
+<div class="alert alert-success" role="alert">
+    We are working on default filters, you could refer to <a href="https://github.com/covergates/covergates">GitHub</a> for the progress or help us by <a href="https://github.com/covergates/covergates/blob/master/CONTRIBUTING.md">contributing</a>.
+</div>
 
 
 
@@ -161,11 +202,9 @@
 <script type="text/javascript" src="/plugins/auto-complete.js"></script>
 <link href="/plugins/auto-complete.css" rel="stylesheet">
 <script type="text/javascript">
-  { { if .Site.IsMultiLingual } }
+  
   var baseurl = "https:\/\/docs.covergates.com";
-  { { else } }
-  var baseurl = "https:\/\/docs.covergates.com";
-  { { end } }
+  
 </script>
 <script type="text/javascript" src="/plugins/search.js"></script>
 

@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html><head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="canonical" href="https://docs.covergates.com/start/cli/">
+
+    <title>
+        
+        Command Line Tool | Covergates Documentation
+        
+    </title>
+
+    
+    <link href="https://docs.covergates.com/css/fontawesome.min.css" rel="stylesheet">
+
+    
+    <link rel="stylesheet" href="https://docs.covergates.com/css/ace.min.css">
+
+    
+    
+    
+    
+
+</head><body><nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow sticky-top" id="navbarMain">
+    <div class="container">
+        <div>
+            <img height="48" class="mx-2" src="/images/logo.png" />
+            <a class="navbar-brand" href="/">
+                Covergates Documentation
+            </a>
+        </div>
+        
+        <button class="navbar-toggler navbar-toggler-right collapsed" type="button" data-toggle="collapse"
+            data-target="#navbarMainCollapse" aria-controls="navbarMainCollapse" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarMainCollapse">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="https://covergates.com" target="_blank"
+                        >
+                        <i class='fas fa-home mx-1'></i> Website
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://github.com/covergates/covergates" target="_blank"
+                        >
+                        <i class='fab fa-github mx-1'></i> GitHub
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://github.com/covergates/covergates/releases" target="_blank"
+                        >
+                        <button class='btn btn-sm btn-success mt-n1'>Download</button>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav><div class="container-fluid">
+            <div class="row">
+
+                <div class="docs-sidenav order-0 col-12 col-md-3 col-lg-2 col-xl-2 position-sticky border-right"><nav class="navbar navbar-expand-md navbar-light pl-0">
+    <button class="navbar-toggler navbar-toggler-right collapsed" type="button" data-toggle="collapse" data-target="#sidenav-left-collapse" aria-controls="sidenav-left-collapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+     <div class="collapse navbar-collapse align-items-start flex-column" id="sidenav-left-collapse">
+            <form class="form-inline my-2 my-lg-0 searchbox">
+                <input class="form-control mr-sm-2 w-100" data-search-input id="search-by" type="text" placeholder="Search">
+            </form>
+         <ul class="navbar-nav flex-column pt-3">
+    <li data-nav-id="/start/" class="nav-item my-1 parent haschildren
+        ">
+        
+        <a class="nav-link p-0" href="/start/"><h6>Getting Started</h6></a>
+        <ul class="list-unstyled ml-2">
+        <li data-nav-id="/start/quick/" class="nav-item my-1">
+                
+                 <a href="/start/quick/" class="nav-link p-0">
+                    Quick Start
+                </a>
+        </li>
+        <li data-nav-id="/start/cli/" class="nav-item my-1 active">
+                
+                 <a href="/start/cli/" class="nav-link p-0">
+                    Command Line Tool
+                </a>
+        </li>
+        <li data-nav-id="/start/setting/" class="nav-item my-1">
+                
+                 <a href="/start/setting/" class="nav-link p-0">
+                    Repository Setting
+                </a>
+        </li>
+        </ul>
+    </li>
+    <li data-nav-id="/language/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/language/"><h6>Supported Language</h6></a>
+    </li>
+    <li data-nav-id="/ci/" class="nav-item my-1 haschildren
+        ">
+        
+        <a class="nav-link p-0" href="/ci/"><h6>Supported CI</h6></a>
+        <ul class="list-unstyled ml-2">
+        <li data-nav-id="/ci/github/" class="nav-item my-1">
+                
+                 <a href="/ci/github/" class="nav-link p-0">
+                    GitHub Action
+                </a>
+        </li>
+        </ul>
+    </li>
+    <li data-nav-id="/server/" class="nav-item my-1 haschildren
+        ">
+        
+        <a class="nav-link p-0" href="/server/"><h6>Self-Hosted Server</h6></a>
+        <ul class="list-unstyled ml-2">
+        <li data-nav-id="/server/github/" class="nav-item my-1">
+                
+                 <a href="/server/github/" class="nav-link p-0">
+                    GitHub
+                </a>
+        </li>
+        <li data-nav-id="/server/gitea/" class="nav-item my-1">
+                
+                 <a href="/server/gitea/" class="nav-link p-0">
+                    Gitea
+                </a>
+        </li>
+        </ul>
+    </li>
+        </ul>
+    </div>
+</nav>
+
+
+</div>
+                <div class="docs-toc large order-lg-2 order-md-0 order-xs-1 col-12 col-lg-2 col-xl-2 position-sticky border-left"><div class="docs-toc">
+	<nav id="TableOfContents">
+  <ul>
+    <li><a href="#the-command">The Command</a></li>
+    <li><a href="#upload-command">Upload Command</a></li>
+    <li><a href="#comment-command">Comment Command</a></li>
+  </ul>
+</nav>
+</div>
+</div>
+                <div class="main col-12 order-1 col-md-9 col-lg-10 col-xl-8 py-3">
+                
+
+<h1>Command Line Tool</h1>
+
+<h2 id="the-command">The Command</h2>
+<hr>
+<p>You can acquire <code>covergates</code> command line tool for <a href="https://github.com/covergates/covergates/releases">releases</a> page.
+Download the <code>.tar.gz</code> for your platform and extract it to somewhere in your <code>PATH</code>. You test it by running:</p>
+
+
+
+
+
+
+    
+    
+
+
+
+
+<div class="position-relative">
+    <div class="position-absolute" style="right:0;">
+        <button class="btn btn-light" data-clipboard-target="#clipboard_658ef51401">
+        Copy
+        </button>
+    </div>
+    <div id="clipboard_658ef51401">
+    <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">
+covergates <span style="color:#111">help</span>
+
+</code></pre></div>
+    </div>
+</div>
+
+
+
+
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">NAME:
+   covergate - A new cli application
+
+USAGE:
+   covergates <span style="color:#f92672">[</span>global options<span style="color:#f92672">]</span> <span style="color:#111">command</span> <span style="color:#f92672">[</span><span style="color:#111">command</span> options<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>arguments...<span style="color:#f92672">]</span>
+
+VERSION:
+   0.0
+
+COMMANDS:
+   upload   upload coverage report
+   comment  leave a report summary comment
+   help, h  Shows a list of commands or <span style="color:#111">help</span> <span style="color:#00a8c8">for</span> one <span style="color:#111">command</span>
+
+GLOBAL OPTIONS:
+   --url value    api service url <span style="color:#f92672">(</span>default: <span style="color:#d88200">&#34;https://covergates.com/api/v1&#34;</span><span style="color:#f92672">)</span> <span style="color:#f92672">[</span><span style="color:#111">$API_URL</span><span style="color:#f92672">]</span>
+   --help, -h     show <span style="color:#111">help</span> <span style="color:#f92672">(</span>default: <span style="color:#111">false</span><span style="color:#f92672">)</span>
+   --version, -v  print the version <span style="color:#f92672">(</span>default: <span style="color:#111">false</span><span style="color:#f92672">)</span>
+</code></pre></div><p>By default, <code>covergates</code> will connect to <code>https://covergates.com/api/v1</code>. You can change it to your self-hosted server with:</p>
+
+
+
+
+
+
+    
+    
+
+
+
+
+<div class="position-relative">
+    <div class="position-absolute" style="right:0;">
+        <button class="btn btn-light" data-clipboard-target="#clipboard_e7636abe0a">
+        Copy
+        </button>
+    </div>
+    <div id="clipboard_e7636abe0a">
+    <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">
+<span style="color:#111">export</span> <span style="color:#111">API_URL</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;https://your.domain.name/api/v1&#34;</span>
+
+</code></pre></div>
+    </div>
+</div>
+
+
+
+
+<p>You can also rebuild the <code>covergates</code> to permanently change the <code>API_URL</code>, please refer to <a href="https://github.com/covergates/covergates/blob/master/README.md">README.md</a> for more detail.</p>
+<h2 id="upload-command">Upload Command</h2>
+<hr>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">NAME:
+   covergates upload - upload coverage report
+
+USAGE:
+   covergates upload <span style="color:#f92672">[</span><span style="color:#111">command</span> options<span style="color:#f92672">]</span> report
+
+OPTIONS:
+   --report value  report id <span style="color:#f92672">[</span><span style="color:#111">$REPORT_ID</span><span style="color:#f92672">]</span>
+   --type value    report <span style="color:#111">type</span>
+   --branch value  branch to upload the report <span style="color:#f92672">[</span><span style="color:#111">$GITHUB_HEAD_REF</span>, <span style="color:#111">$DRONE_SOURCE_BRANCH</span><span style="color:#f92672">]</span>
+   --help, -h      show <span style="color:#111">help</span> <span style="color:#f92672">(</span>default: <span style="color:#111">false</span><span style="color:#f92672">)</span>
+</code></pre></div><p><code>covergates upload</code> helps you upload coverage reports. It requires at least 3 arguments:</p>
+<ul>
+<li><code>--report</code>: Report ID</li>
+<li><code>--type</code>: Report Type</li>
+<li><code>report</code>: Report Path</li>
+</ul>
+<p>You could omit <code>--report</code> once you setup <code>REPORT_ID</code> environment.</p>
+<p>The supported report type <code>--type</code> are:</p>
+
+<div class="table " role="alert">
+    <table>
+<thead>
+<tr>
+<th align="center">Language</th>
+<th align="center">Type</th>
+<th align="center">Format</th>
+<th align="center">Report Name Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Go</td>
+<td align="center"><code>go</code></td>
+<td align="center">cover</td>
+<td align="center">coverage.out</td>
+</tr>
+<tr>
+<td align="center">Perl</td>
+<td align="center"><code>perl</code></td>
+<td align="center">Devel::Cover</td>
+<td align="center">core_db</td>
+</tr>
+<tr>
+<td align="center">Python</td>
+<td align="center"><code>python</code></td>
+<td align="center">Coverage.py - xml</td>
+<td align="center">coverage.xml</td>
+</tr>
+<tr>
+<td align="center">Ruby</td>
+<td align="center"><code>ruby</code></td>
+<td align="center">SimpleCov - RSpec</td>
+<td align="center">.resultset.json</td>
+</tr>
+<tr>
+<td align="center">C / C++</td>
+<td align="center"><code>lcov</code></td>
+<td align="center">lcov</td>
+<td align="center">lcov.info</td>
+</tr>
+<tr>
+<td align="center">Javascript / Typescript</td>
+<td align="center"><code>lcov</code></td>
+<td align="center">lcov</td>
+<td align="center">lcov.info</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+<h2 id="comment-command">Comment Command</h2>
+<hr>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">NAME:
+   covergates comment - leave a report summary comment
+
+USAGE:
+   covergates comment <span style="color:#f92672">[</span><span style="color:#111">command</span> options<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>arguments...<span style="color:#f92672">]</span>
+
+OPTIONS:
+   --report value  report id <span style="color:#f92672">[</span><span style="color:#111">$REPORT_ID</span><span style="color:#f92672">]</span>
+   --number value  pull request number <span style="color:#f92672">[</span><span style="color:#111">$DRONE_PULL_REQUEST</span>, <span style="color:#111">$PULL_REQUEST</span><span style="color:#f92672">]</span>
+   --help, -h      show <span style="color:#111">help</span> <span style="color:#f92672">(</span>default: <span style="color:#111">false</span><span style="color:#f92672">)</span>
+</code></pre></div><p><code>covergates comment</code> will leave a brief summary on your pull request.
+Here is an example:</p>
+<p><img src="/images/pr_comment.png" alt="comment"></p>
+
+
+<div class="card my-3 border-top-0 border-right-0 border-bottom-0 border-left border-primary rounded" style="border-width:4px !important;">
+    <div class="wrap border border-left-0 rounded">
+        
+        <div class="card-header border-0 bg-white pl-3 text-primary">
+            <h3>Notice</h3>
+        </div>
+        
+        <div class="card-body pt-1">
+            The command may require running <code>covergates upload</code> with <code>--branch</code> to work.
+        </div>
+    </div>
+</div>
+
+
+
+    
+
+
+                    
+                    <div class="row"></div> 
+
+                </div>
+
+            </div> 
+
+        </div> 
+<script src="https://docs.covergates.com/lib/jquery.min.js"></script> 
+<script src="https://docs.covergates.com/lib/popper.min.js"></script> 
+
+<script src="https://docs.covergates.com/js/bootstrap.min.js"></script> 
+
+
+<script type="text/javascript" src="/plugins/lunr.min.js"></script>
+<script type="text/javascript" src="/plugins/auto-complete.js"></script>
+<link href="/plugins/auto-complete.css" rel="stylesheet">
+<script type="text/javascript">
+  
+  var baseurl = "https:\/\/docs.covergates.com";
+  
+</script>
+<script type="text/javascript" src="/plugins/search.js"></script>
+
+
+<script type="text/javascript" src="/plugins/clipboard.js"></script>
+<script>
+  new ClipboardJS('.btn');
+</script></body>
+</html>

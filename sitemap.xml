@@ -7,19 +7,7 @@
   </url>
   
   <url>
-    <loc>https://docs.covergates.com/start/quick/</loc>
-  </url>
-  
-  <url>
-    <loc>https://docs.covergates.com/start/setting/</loc>
-  </url>
-  
-  <url>
     <loc>https://docs.covergates.com/server/gitea/</loc>
-  </url>
-  
-  <url>
-    <loc>https://docs.covergates.com/start/comment/</loc>
   </url>
   
   <url>
@@ -27,7 +15,23 @@
   </url>
   
   <url>
+    <loc>https://docs.covergates.com/start/quick/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.covergates.com/start/cli/</loc>
+  </url>
+  
+  <url>
     <loc>https://docs.covergates.com/language/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.covergates.com/ci/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.covergates.com/start/setting/</loc>
   </url>
   
   <url>
@@ -40,6 +44,10 @@
   
   <url>
     <loc>https://docs.covergates.com/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.covergates.com/ci/github/</loc>
   </url>
   
   <url>

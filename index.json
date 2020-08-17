@@ -7,29 +7,8 @@
 	"content": ""
 },
 {
-	"uri": "https://docs.covergates.com/start/quick/",
-	"title": "Quick Start",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "https://docs.covergates.com/start/setting/",
-	"title": "Repository Setting",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
 	"uri": "https://docs.covergates.com/server/gitea/",
 	"title": "Gitea",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "https://docs.covergates.com/start/comment/",
-	"title": "Pull Request",
 	"tags": [],
 	"description": "",
 	"content": ""
@@ -39,21 +18,49 @@
 	"title": "Getting Started",
 	"tags": [],
 	"description": "",
-	"content": "test\n"
+	"content": "How to use Covergates for beginner. Overview  This chapter will introduce how to use Covergates. It will use official website https://covergates.com as example. If you already have a self-hosted Covergates service, please replace https://covergates.com in the example to your URL. For more information about self-hosted Coverages service, please refer to Self-Hosted Server chapter.\n Quick Start Repository Setting Pull Request  "
+},
+{
+	"uri": "https://docs.covergates.com/start/quick/",
+	"title": "Quick Start",
+	"tags": [],
+	"description": "",
+	"content": "This tutorial will access to https://covergates.com. If you are using self-hosted version, please replace https://covergates.com/ to your self-hosted server URL. Fundamental Workflow    Sign up Covergates with your GitHub or Gitea account.\n  Navigate https://covergates.com/repo to the list of your repositories.\n  Click ACTIVATE button to activate the repository for uploading coverage reports.\n  Go to SETTING tag, you can update report path filter and get your Report ID\nTo get more information about repository setting, please refer to Repository Setting    Run testing for your language and generate coverage report. You can refer to Supported Language for more detail.\n  Download the latest released covergates command line tool for your platform. Once downloaded, the binary can run directly. You could put it to somewhere in your PATH.\n  Upload your report by running covergates upload, for example:\nCopy   covergates upload --report \u0026lt;Report ID\u0026gt; --type go ./coverage.out    or for self-hosted server\nCopy   export REPORT_ID=\u0026#34;Report ID\u0026#34; export API_URL=\u0026#34;http://your.domain.name/api/v1\u0026#34; covergates upload --type go ./coverage.out    You can refer to Command Line Tool for more options.    Congratulation!  Now you can navigate your repository page to see your report!\n  "
+},
+{
+	"uri": "https://docs.covergates.com/start/cli/",
+	"title": "Command Line Tool",
+	"tags": [],
+	"description": "",
+	"content": "The Command  You can acquire covergates command line tool for releases page. Download the .tar.gz for your platform and extract it to somewhere in your PATH. You test it by running:\nCopy   covergates help    NAME: covergate - A new cli application USAGE: covergates [global options] command [command options] [arguments...] VERSION: 0.0 COMMANDS: upload upload coverage report comment leave a report summary comment help, h Shows a list of commands or help for one command GLOBAL OPTIONS: --url value api service url (default: \u0026#34;https://covergates.com/api/v1\u0026#34;) [$API_URL] --help, -h show help (default: false) --version, -v print the version (default: false) By default, covergates will connect to https://covergates.com/api/v1. You can change it to your self-hosted server with:\nCopy   export API_URL=\u0026#34;https://your.domain.name/api/v1\u0026#34;    You can also rebuild the covergates to permanently change the API_URL, please refer to README.md for more detail.\nUpload Command  NAME: covergates upload - upload coverage report USAGE: covergates upload [command options] report OPTIONS: --report value report id [$REPORT_ID] --type value report type --branch value branch to upload the report [$GITHUB_HEAD_REF, $DRONE_SOURCE_BRANCH] --help, -h show help (default: false) covergates upload helps you upload coverage reports. It requires at least 3 arguments:\n --report: Report ID --type: Report Type report: Report Path  You could omit --report once you setup REPORT_ID environment.\nThe supported report type --type are:\n   Language Type Format Report Name Example     Go go cover coverage.out   Perl perl Devel::Cover core_db   Python python Coverage.py - xml coverage.xml   Ruby ruby SimpleCov - RSpec .resultset.json   C / C++ lcov lcov lcov.info   Javascript / Typescript lcov lcov lcov.info     Comment Command  NAME: covergates comment - leave a report summary comment USAGE: covergates comment [command options] [arguments...] OPTIONS: --report value report id [$REPORT_ID] --number value pull request number [$DRONE_PULL_REQUEST, $PULL_REQUEST] --help, -h show help (default: false) covergates comment will leave a brief summary on your pull request. Here is an example:\nNotice  The command may require running covergates upload with --branch to work.    "
 },
 {
 	"uri": "https://docs.covergates.com/language/",
 	"title": "Supported Language",
 	"tags": [],
 	"description": "",
+	"content": "Tutorial     Language      Go go-example   Perl ongoing   Python ongoing   Ruby (SimpleCov: RSpec) -   lcov (C, C++, Javascript, TypeScript) -    "
+},
+{
+	"uri": "https://docs.covergates.com/ci/",
+	"title": "Supported CI",
+	"tags": [],
+	"description": "",
 	"content": ""
+},
+{
+	"uri": "https://docs.covergates.com/start/setting/",
+	"title": "Repository Setting",
+	"tags": [],
+	"description": "",
+	"content": "You could config repository on setting page. Filter Path  Filter takes regular expressions and trims the path. Take Go coverage report for example:\nmode: set github.com/covergates/covergates/modules/report/report.go:22.100,24.45 2 1 github.com/covergates/covergates/modules/report/report.go:27.2,28.45 2 1 github.com/covergates/covergates/modules/report/report.go:39.2,39.22 1 1 github.com/covergates/covergates/modules/report/report.go:47.2,48.45 2 1 github.com/covergates/covergates/modules/report/report.go:52.2,55.8 1 1 github.com/covergates/covergates/modules/report/report.go:24.45,26.3 1 1 github.com/covergates/covergates/modules/report/report.go:28.45,33.32 2 1 github.com/covergates/covergates/modules/report/report.go:37.3,37.38 1 1 github.com/covergates/covergates/modules/report/report.go:33.32,36.4 2 1 You could remove github.com/covergates/covergates with setting:\nWe are working on default filters, you could refer to GitHub for the progress or help us by contributing.  "
 },
 {
 	"uri": "https://docs.covergates.com/server/",
 	"title": "Self-Hosted Server",
 	"tags": [],
 	"description": "",
-	"content": " Covergates is\n"
+	"content": " "
 },
 {
 	"uri": "https://docs.covergates.com/categories/",
@@ -64,10 +71,17 @@
 },
 {
 	"uri": "https://docs.covergates.com/",
-	"title": "Covergates Guide",
+	"title": "Covergates",
 	"tags": [],
 	"description": "",
-	"content": "Thank you for visiting covergates user guide! "
+	"content": "Welcome to Covergates User Guide! What is Covergates?  Covergates is a self-hosted coverage reports management web service. It\u0026rsquo;s an alternative to services like:\n Code Climate Codecov Coveralls  The goal of this project is to provide an easiest way to deploy a self-hosted service to track code coverage. You don\u0026rsquo;t need to have root permission, network connection or even database server to run covergates. Covergates is built with Go language, therefore it provides an independent binary distribution across all platforms that Go supports. It includes Linux, Windows and macOS.\nFeatures    Git Service Support\n Gitea GitHub    Languages Support\n Go Python Ruby Perl C / C++ Javascript TypeScript    CI Tools\n GitHub Action    Database\n SQLite PostgreSQL    Web Service\n  Source Code Coverage Highlight\n  Repository Setting Dashboard\n  Commits History\n  Promotions\n  Coverage Badge \n  Repository Status Card\n\n      Coming Soon   We are working on:\n  Git Service\n GitLab Support    Language Support\n Java Others, let us know the language you want!    CI Tools\n Drone    Database\n MySQL    "
+},
+{
+	"uri": "https://docs.covergates.com/ci/github/",
+	"title": "GitHub Action",
+	"tags": [],
+	"description": "",
+	"content": ""
 },
 {
 	"uri": "https://docs.covergates.com/tags/",

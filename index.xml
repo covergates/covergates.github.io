@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Covergates Guide on Covergates Documentation</title>
+    <title>Covergates on Covergates Documentation</title>
     <link>https://docs.covergates.com/</link>
-    <description>Recent content in Covergates Guide on Covergates Documentation</description>
+    <description>Recent content in Covergates on Covergates Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
@@ -20,24 +20,6 @@
     </item>
     
     <item>
-      <title>Quick Start</title>
-      <link>https://docs.covergates.com/start/quick/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.covergates.com/start/quick/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Repository Setting</title>
-      <link>https://docs.covergates.com/start/setting/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.covergates.com/start/setting/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Gitea</title>
       <link>https://docs.covergates.com/server/gitea/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -47,11 +29,44 @@
     </item>
     
     <item>
-      <title>Pull Request</title>
-      <link>https://docs.covergates.com/start/comment/</link>
+      <title>Quick Start</title>
+      <link>https://docs.covergates.com/start/quick/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.covergates.com/start/comment/</guid>
+      <guid>https://docs.covergates.com/start/quick/</guid>
+      <description>This tutorial will access to https://covergates.com. If you are using self-hosted version, please replace https://covergates.com/ to your self-hosted server URL. Fundamental Workflow    Sign up Covergates with your GitHub or Gitea account.
+  Navigate https://covergates.com/repo to the list of your repositories.
+  Click ACTIVATE button to activate the repository for uploading coverage reports.
+  Go to SETTING tag, you can update report path filter and get your Report ID</description>
+    </item>
+    
+    <item>
+      <title>Command Line Tool</title>
+      <link>https://docs.covergates.com/start/cli/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.covergates.com/start/cli/</guid>
+      <description>The Command  You can acquire covergates command line tool for releases page. Download the .tar.gz for your platform and extract it to somewhere in your PATH. You test it by running:
+Copy   covergates help    NAME: covergate - A new cli application USAGE: covergates [global options] command [command options] [arguments...] VERSION: 0.0 COMMANDS: upload upload coverage report comment leave a report summary comment help, h Shows a list of commands or help for one command GLOBAL OPTIONS: --url value api service url (default: &amp;#34;https://covergates.</description>
+    </item>
+    
+    <item>
+      <title>Repository Setting</title>
+      <link>https://docs.covergates.com/start/setting/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.covergates.com/start/setting/</guid>
+      <description>You could config repository on setting page. Filter Path  Filter takes regular expressions and trims the path. Take Go coverage report for example:
+mode: set github.com/covergates/covergates/modules/report/report.go:22.100,24.45 2 1 github.com/covergates/covergates/modules/report/report.go:27.2,28.45 2 1 github.com/covergates/covergates/modules/report/report.go:39.2,39.22 1 1 github.com/covergates/covergates/modules/report/report.go:47.2,48.45 2 1 github.com/covergates/covergates/modules/report/report.go:52.2,55.8 1 1 github.com/covergates/covergates/modules/report/report.go:24.45,26.3 1 1 github.com/covergates/covergates/modules/report/report.go:28.45,33.32 2 1 github.com/covergates/covergates/modules/report/report.go:37.3,37.38 1 1 github.com/covergates/covergates/modules/report/report.go:33.32,36.4 2 1 You could remove github.com/covergates/covergates with setting:
+We are working on default filters, you could refer to GitHub for the progress or help us by contributing.</description>
+    </item>
+    
+    <item>
+      <title>GitHub Action</title>
+      <link>https://docs.covergates.com/ci/github/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.covergates.com/ci/github/</guid>
       <description></description>
     </item>
     
