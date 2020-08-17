@@ -2,56 +2,56 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Covergates Guide on Covergates Documentation</title>
-    <link>https://covergates.github.io/</link>
+    <link>https://docs.covergates.com/</link>
     <description>Recent content in Covergates Guide on Covergates Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="https://covergates.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://docs.covergates.com/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>GitHub</title>
-      <link>https://covergates.github.io/server/github/</link>
+      <link>https://docs.covergates.com/server/github/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://covergates.github.io/server/github/</guid>
+      <guid>https://docs.covergates.com/server/github/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Quick Start</title>
-      <link>https://covergates.github.io/start/quick/</link>
+      <link>https://docs.covergates.com/start/quick/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://covergates.github.io/start/quick/</guid>
+      <guid>https://docs.covergates.com/start/quick/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Repository Setting</title>
-      <link>https://covergates.github.io/start/setting/</link>
+      <link>https://docs.covergates.com/start/setting/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://covergates.github.io/start/setting/</guid>
+      <guid>https://docs.covergates.com/start/setting/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Gitea</title>
-      <link>https://covergates.github.io/server/gitea/</link>
+      <link>https://docs.covergates.com/server/gitea/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://covergates.github.io/server/gitea/</guid>
+      <guid>https://docs.covergates.com/server/gitea/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Pull Request</title>
-      <link>https://covergates.github.io/start/comment/</link>
+      <link>https://docs.covergates.com/start/comment/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://covergates.github.io/start/comment/</guid>
+      <guid>https://docs.covergates.com/start/comment/</guid>
       <description></description>
     </item>
     
