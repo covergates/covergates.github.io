@@ -29,7 +29,7 @@
       
       <guid>https://docs.covergates.com/start/cli/</guid>
       <description>The Command  You can acquire covergates command line tool for releases page. Download the .tar.gz for your platform and extract it to somewhere in your PATH. You test it by running:
-Copy   covergates help    NAME: covergate - A new cli application USAGE: covergates [global options] command [command options] [arguments...] VERSION: 0.0 COMMANDS: upload upload coverage report comment leave a report summary comment help, h Shows a list of commands or help for one command GLOBAL OPTIONS: --url value api service url (default: &amp;#34;https://covergates.</description>
+Copy   covergates help    NAME: covergate - A new cli application USAGE: covergates [global options] command [command options] [arguments...] VERSION: 0.0 COMMANDS: upload upload coverage report comment leave a report summary comment help, h Shows a list of commands or help for one command GLOBAL OPTIONS: --token value provide OAuth token for API [$GATES_TOKEN] --url value api service url (default: &amp;#34;https://covergates.</description>
     </item>
     
     <item>

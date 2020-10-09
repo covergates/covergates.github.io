@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html><head>
-	<meta name="generator" content="Hugo 0.74.3" />
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="canonical" href="https://docs.covergates.com/">
+    <link rel="canonical" href="https://docs.covergates.com/server/gitlab/">
 
     <title>
         
-        Covergates | Covergates Documentation
+        Config GitLab | Covergates Documentation
         
     </title>
 
@@ -110,7 +109,7 @@
         
         <a class="nav-link p-0" href="/ci/"><h6>Supported CI</h6></a>
     </li>
-    <li data-nav-id="/server/" class="nav-item my-1 haschildren
+    <li data-nav-id="/server/" class="nav-item my-1 parent haschildren
         ">
         
         <a class="nav-link p-0" href="/server/"><h6>Self-Hosted Server</h6></a>
@@ -127,7 +126,7 @@
                     Config Gitea
                 </a>
         </li>
-        <li data-nav-id="/server/gitlab/" class="nav-item my-1">
+        <li data-nav-id="/server/gitlab/" class="nav-item my-1 active">
                 
                  <a href="/server/gitlab/" class="nav-link p-0">
                     Config GitLab
@@ -144,119 +143,83 @@
                 <div class="docs-toc large order-lg-2 order-md-0 order-xs-1 col-12 col-lg-2 col-xl-2 position-sticky border-left"><div class="docs-toc">
 	<nav id="TableOfContents">
   <ul>
-    <li><a href="#what-is-covergates">What is Covergates?</a></li>
-    <li><a href="#features">Features</a></li>
-    <li><a href="#coming-soon">Coming Soon</a></li>
+    <li><a href="#create-oauth-application">Create OAuth Application</a></li>
+    <li><a href="#update-environment">Update Environment</a></li>
   </ul>
 </nav>
 </div>
 </div>
                 <div class="main col-12 order-1 col-md-9 col-lg-10 col-xl-8 py-3">
                 
-	
 
-	<h1>Covergates</h1>
+<h1>Config GitLab</h1>
 
-	<p class="lead">
-    Welcome to Covergates User Guide!
-</p>
-
-<h2 id="what-is-covergates">What is Covergates?</h2>
+<h2 id="create-oauth-application">Create OAuth Application</h2>
 <hr>
-<p>Covergates is a self-hosted coverage reports management web service.
-It&rsquo;s an alternative to services like:</p>
-<ul>
-<li><a href="https://codeclimate.com/">Code Climate</a></li>
-<li><a href="https://codecov.io/">Codecov</a></li>
-<li><a href="https://coveralls.io/">Coveralls</a></li>
-</ul>
-<p>The goal of this project is to provide an easiest way
-to deploy a self-hosted service to track code coverage.
-You don&rsquo;t need to have <strong>root permission</strong>, <strong>network connection</strong> or even <strong>database server</strong>
-to run covergates.
-Covergates is built with <strong><a href="https://golang.org/">Go</a></strong> language,
-therefore it provides an independent binary distribution across all platforms that Go supports.
-It includes Linux, Windows and macOS.</p>
-<h2 id="features">Features</h2>
-<hr>
-<ul>
-<li>
-<p>Git Service Support</p>
-<ul>
-<li>Gitea</li>
-<li>GitHub</li>
-<li>GitLab</li>
-</ul>
-</li>
-<li>
-<p>Languages Support</p>
-<ul>
-<li>Go</li>
-<li>Python</li>
-<li>Ruby</li>
-<li>Perl</li>
-<li>C / C++</li>
-<li>Javascript</li>
-<li>TypeScript</li>
-<li>PHP</li>
-</ul>
-</li>
-<li>
-<p>CI Tools</p>
-<ul>
-<li>GitHub Action</li>
-<li>Drone</li>
-</ul>
-</li>
-<li>
-<p>Database</p>
-<ul>
-<li>SQLite</li>
-<li>PostgreSQL</li>
-<li>MySQL</li>
-</ul>
-</li>
-<li>
-<p>Web Service</p>
-<ul>
-<li>
-<p>Source Code Coverage Highlight</p>
-</li>
-<li>
-<p>Repository Setting Dashboard</p>
-</li>
-<li>
-<p>Commits History</p>
-</li>
-<li>
-<p>Promotions</p>
-<ul>
-<li>
-<p>Coverage Badge <a href="https://covergates.com/report/github/covergates/covergates"><img src="https://covergates.com/api/v1/reports/bsi5dvi23akg00a0tgl0/badge?" alt="badge"></a></p>
-</li>
-<li>
-<p>Repository Status Card</p>
-<p><a href="https://covergates.com/report/github/covergates/covergates"><img src="https://covergates.com/api/v1/reports/bsi5dvi23akg00a0tgl0/card" alt="card"></a></p>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="coming-soon">Coming Soon</h2>
-<hr>
-<p><i class='fas fa-wrench'></i> We are working on:</p>
-<ul>
-<li>
-<p>Language Support</p>
-<ul>
-<li>Java</li>
-<li>Others, <a href="https://github.com/covergates/covergates/issues">let us know the language you want!</a></li>
-</ul>
-</li>
-</ul>
+<p><code>covergates-server</code> uses OAuth2 to control user access.
+To create an OAuth2 application on GitLab, navigate <code>http://your.gitlab.domain/profile/applications</code> on your GitLab website.</p>
+<p>Create a new application as shown below:</p>
+<p><img src="/images/gitlab_oauth.png" alt="oauth"></p>
 
-	
+<div class="alert alert-success" role="alert">
+    Replace <code>http://localhost:8080/login/gitlab</code> to your Covergates URL, such as <code>http://your.domain.name/login/gitlab</code>
+</div>
+
+<p>Notice that covergates requires below scopes:</p>
+<ul>
+<li>api</li>
+<li>read_user</li>
+<li>read_api</li>
+<li>read_repository</li>
+<li>profile</li>
+<li>email</li>
+</ul>
+<p>You should get your <strong>Client ID</strong> and <strong>Client Secret</strong> like:</p>
+<p><img src="/images/gitlab_client.png" alt="client"></p>
+<h2 id="update-environment">Update Environment</h2>
+<hr>
+<p>Once you create an OAuth application on GitLab, you could use below environment variables to tell <code>covergates-server</code> to use it.</p>
+
+
+
+
+
+
+    
+    
+
+
+
+
+<div class="position-relative">
+    <div class="position-absolute" style="right:0;">
+        <button class="btn btn-light" data-clipboard-target="#clipboard_f75c862250">
+        Copy
+        </button>
+    </div>
+    <div id="clipboard_f75c862250">
+    <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">
+<span style="color:#111">export</span> <span style="color:#111">GATES_GITLAB_CLIENT_ID</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;68e4d83d0093dcb0e862eb9b4dbdfbb7b2e993e9f0259a66017f18995d0cdaf7&#34;</span>,
+<span style="color:#111">export</span> <span style="color:#111">GATES_GITLAB_CLIENT_SECRET</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;ed989a0a94ecb7c0520f764f78ff3ff751bab198ddfebdb39f9bdf2b9aa958f7&#34;</span>,
+<span style="color:#111">export</span> <span style="color:#111">GATES_GITLAB_SERVER</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;http://localhost&#34;</span>,
+<span style="color:#111">export</span> <span style="color:#111">GATES_GITLAB_SKIP_VERITY</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;true&#34;</span>
+
+</code></pre></div>
+    </div>
+</div>
+
+
+
+
+
+<div class="alert alert-success" role="alert">
+    Replace <code>GATES_GITLAB_CLIENT_ID</code>, <code>GATES_GITLAB_CLIENT_SECRET</code> and <code>GATES_GITLAB_SERVER</code> to the value you acquire on previous step.
+</div>
+
+<p>Restart your <code>covergates-server</code> to apply to new setting.</p>
+
+
+    
 
 
                     

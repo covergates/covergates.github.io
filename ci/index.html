@@ -126,6 +126,12 @@
                     Config Gitea
                 </a>
         </li>
+        <li data-nav-id="/server/gitlab/" class="nav-item my-1">
+                
+                 <a href="/server/gitlab/" class="nav-link p-0">
+                    Config GitLab
+                </a>
+        </li>
         </ul>
     </li>
         </ul>
@@ -204,6 +210,17 @@
     <span style="color:#00a8c8">when</span><span style="color:#111">:</span>
       <span style="color:#00a8c8">event</span><span style="color:#111">:</span>
         - pull_request
+</code></pre></div><p>To upload report to protected repository with OAuth Token:</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml"><span style="color:#00a8c8">kind</span><span style="color:#111">:</span> pipeline
+<span style="color:#00a8c8">name</span><span style="color:#111">:</span> default
+<span style="color:#00a8c8">steps</span><span style="color:#111">:</span>
+  - <span style="color:#00a8c8">name</span><span style="color:#111">:</span> upload
+    <span style="color:#00a8c8">image</span><span style="color:#111">:</span> covergates/drone-covergates
+    <span style="color:#00a8c8">settings</span><span style="color:#111">:</span>
+      <span style="color:#00a8c8">report_id</span><span style="color:#111">:</span> bt9huh223akg00dkqseg
+      <span style="color:#00a8c8">report</span><span style="color:#111">:</span> ./coverage/lcov.info
+      <span style="color:#00a8c8">token</span><span style="color:#111">:</span> YOUR_OAUTH_TOKEN
+      <span style="color:#00a8c8">type</span><span style="color:#111">:</span> lcov
 </code></pre></div>
 <div class="alert alert-success" role="alert">
     Reach the <a href="https://github.com/covergates/drone-covergates">source code</a> for more detail.

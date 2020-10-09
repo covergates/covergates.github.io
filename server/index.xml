@@ -34,5 +34,18 @@ Replace http://localhost:8080/login/gitea to your Covergates URL, such as http:/
 Update Environment  Once you create an OAuth application on Gitea, you could use below environment variables to tell covergates-server to use it.</description>
     </item>
     
+    <item>
+      <title>Config GitLab</title>
+      <link>https://docs.covergates.com/server/gitlab/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.covergates.com/server/gitlab/</guid>
+      <description>Create OAuth Application  covergates-server uses OAuth2 to control user access. To create an OAuth2 application on GitLab, navigate http://your.gitlab.domain/profile/applications on your GitLab website.
+Create a new application as shown below:
+Replace http://localhost:8080/login/gitlab to your Covergates URL, such as http://your.domain.name/login/gitlab  Notice that covergates requires below scopes:
+ api read_user read_api read_repository profile email  You should get your Client ID and Client Secret like:
+Update Environment  Once you create an OAuth application on GitLab, you could use below environment variables to tell covergates-server to use it.</description>
+    </item>
+    
   </channel>
 </rss>

@@ -126,6 +126,12 @@
                     Config Gitea
                 </a>
         </li>
+        <li data-nav-id="/server/gitlab/" class="nav-item my-1">
+                
+                 <a href="/server/gitlab/" class="nav-link p-0">
+                    Config GitLab
+                </a>
+        </li>
         </ul>
     </li>
         </ul>
@@ -197,6 +203,7 @@ COMMANDS:
    help, h  Shows a list of commands or <span style="color:#111">help</span> <span style="color:#00a8c8">for</span> one <span style="color:#111">command</span>
 
 GLOBAL OPTIONS:
+   --token value  provide OAuth token <span style="color:#00a8c8">for</span> API <span style="color:#f92672">[</span><span style="color:#111">$GATES_TOKEN</span><span style="color:#f92672">]</span>
    --url value    api service url <span style="color:#f92672">(</span>default: <span style="color:#d88200">&#34;https://covergates.com/api/v1&#34;</span><span style="color:#f92672">)</span> <span style="color:#f92672">[</span><span style="color:#111">$API_URL</span><span style="color:#f92672">]</span>
    --help, -h     show <span style="color:#111">help</span> <span style="color:#f92672">(</span>default: <span style="color:#111">false</span><span style="color:#f92672">)</span>
    --version, -v  print the version <span style="color:#f92672">(</span>default: <span style="color:#111">false</span><span style="color:#f92672">)</span>
@@ -293,6 +300,12 @@ OPTIONS:
 <td align="center"><code>lcov</code></td>
 <td align="center">lcov</td>
 <td align="center">lcov.info</td>
+</tr>
+<tr>
+<td align="center">PHP</td>
+<td align="center"><code>clover</code></td>
+<td align="center">Clover</td>
+<td align="center">coverage.xml</td>
 </tr>
 <tr>
 <td align="center">Javascript / Typescript</td>

@@ -126,6 +126,12 @@
                     Config Gitea
                 </a>
         </li>
+        <li data-nav-id="/server/gitlab/" class="nav-item my-1">
+                
+                 <a href="/server/gitlab/" class="nav-link p-0">
+                    Config GitLab
+                </a>
+        </li>
         </ul>
     </li>
         </ul>
@@ -246,15 +252,17 @@ Download <code>.tar.gz</code> for your platform and extract it to the path you l
 
 <div class="position-relative">
     <div class="position-absolute" style="right:0;">
-        <button class="btn btn-light" data-clipboard-target="#clipboard_1f6b36fd0b">
+        <button class="btn btn-light" data-clipboard-target="#clipboard_4ccbdc2950">
         Copy
         </button>
     </div>
-    <div id="clipboard_1f6b36fd0b">
+    <div id="clipboard_4ccbdc2950">
     <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">
 <span style="color:#111">export</span> <span style="color:#111">GATES_SERVER_ADDR</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;http://your.domain.name&#34;</span>
 <span style="color:#111">export</span> <span style="color:#111">GATES_SERVER_BASE</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;/covergates&#34;</span>
+
 <span style="color:#75715e"># Server will bind to http://your.domain.name/covergates</span>
+
 
 </code></pre></div>
     </div>
@@ -295,7 +303,7 @@ It will create a <code>core.db</code> under working path, all reports will save 
 
 
 
-<p>We also provide <a href="https://www.postgresql.org/">PostgreSQL</a> as database server. Here is an example:</p>
+<p>To use <a href="https://www.postgresql.org/">PostgreSQL</a> as database server. Here is an example:</p>
 
 
 
@@ -335,11 +343,52 @@ It will create a <code>core.db</code> under working path, all reports will save 
     You need to create a database on your PostgreSQL server in advance.
 </div>
 
+<p>To use <a href="https://www.mysql.com/">MySQL</a> as database server. Here is an example:</p>
+
+
+
+
+
+
+    
+    
+
+
+
+
+<div class="position-relative">
+    <div class="position-absolute" style="right:0;">
+        <button class="btn btn-light" data-clipboard-target="#clipboard_ede5805bd6">
+        Copy
+        </button>
+    </div>
+    <div id="clipboard_ede5805bd6">
+    <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">
+<span style="color:#111">export</span> <span style="color:#111">GATES_DB_DRIVER</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;mysql&#34;</span>,
+<span style="color:#111">export</span> <span style="color:#111">GATES_DB_HOST</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;127.0.0.1&#34;</span>,
+<span style="color:#111">export</span> <span style="color:#111">GATES_DB_PORT</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;3306&#34;</span>,
+<span style="color:#111">export</span> <span style="color:#111">GATES_DB_USER</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;mysql&#34;</span>,
+<span style="color:#111">export</span> <span style="color:#111">GATES_DB_NAME</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;covergates&#34;</span>,
+<span style="color:#111">export</span> <span style="color:#111">GATES_DB_PASSWORD</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;PASSWORD&#34;</span>,
+
+</code></pre></div>
+    </div>
+</div>
+
+
+
+
+
+<div class="alert alert-warning" role="alert">
+    Do not use NO_ZERO_IN_DATE in your sql_mode. Covergates may use dummy date (value Zero) for OAuth token without expiration date
+</div>
+
 <h3 id="config-git-service">Config Git Service</h3>
 <p><code>covergates-server</code> requires to connect with a Git service to access your source code. Supported Git service are:</p>
 <ul>
 <li><a href="/server/gitea">Gitea</a></li>
 <li><a href="/server/github">GitHub</a></li>
+<li><a href="/server/gitlab">GitLab</a></li>
 </ul>
 <p>Please refer to the Git service you using to learn how to config <code>covergates-server</code>.</p>
 
